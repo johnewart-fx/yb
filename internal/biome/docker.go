@@ -51,11 +51,19 @@ type Container struct {
 	dirs   Dirs
 }
 
+// AMD64
+//const (
+//	TiniURL    = "https://github.com/krallin/tini/releases/download/v0.19.0/tini-amd64"
+//	tiniSize   = 24064
+//	tiniSHA256 = "93dcc18adc78c65a028a84799ecf8ad40c936fdfc5f2a57b1acda5a8117fa82c"
+//	tiniPath   = "/tini"
+//)
+// ARM64
 const (
-	TiniURL    = "https://github.com/krallin/tini/releases/download/v0.19.0/tini-amd64"
-	tiniSize   = 24064
-	tiniSHA256 = "93dcc18adc78c65a028a84799ecf8ad40c936fdfc5f2a57b1acda5a8117fa82c"
-	tiniPath   = "/tini"
+	TiniURL    = "https://github.com/krallin/tini/releases/download/v0.19.0/tini-arm64"
+	tiniSize = 23904
+	tiniSHA256 = "07952557df20bfd2a95f9bef198b445e006171969499a1d361bd9e6f8e5e0e81"
+	tiniPath = "/tini"
 )
 
 // ContainerOptions holds parameters for CreateContainer.

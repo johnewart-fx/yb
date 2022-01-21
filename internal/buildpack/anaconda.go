@@ -30,9 +30,10 @@ func installAnaconda(ctx context.Context, sys Sys, pyMajor int, version string) 
 	} else {
 		log.Infof(ctx, "Installing anaconda in %s", anacondaDir)
 
-		// Just so happens that for right now, Python 2.7 and 3.7
-		// are the ones used for Miniconda.
-		const pyMinor = 7
+		pyMinor := 7
+		if(pyMajor == 3) { 
+			pyMinor = 8
+		}
 		downloadURL, err := anacondaDownloadURL(version, pyMajor, pyMinor, sys.Biome.Describe())
 		if err != nil {
 			return biome.Environment{}, err
@@ -107,6 +108,7 @@ func anacondaDownloadURL(version string, pyMajor, pyMinor int, desc *biome.Descr
 		anacondaArchMap = map[string]string{
 			biome.Intel64: "x86_64",
 			biome.Intel32: "x86",
+			biome.ARM64: "arm64",
 		}
 	)
 	v, err := semver.Parse(version)

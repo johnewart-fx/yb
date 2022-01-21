@@ -44,6 +44,7 @@ func installNode(ctx context.Context, sys Sys, spec yb.BuildpackSpec) (biome.Env
 		}[desc.OS],
 		map[string]string{
 			biome.Intel64: "x64",
+			biome.ARM64: "arm64",
 		}[desc.Arch],
 	}
 	if data.OS == "" {

@@ -98,6 +98,7 @@ type newBiomeOptions struct {
 	netrcFiles []string
 
 	executionMode   executionMode
+	reuseExisting   bool
 	dockerClient    *docker.Client
 	dockerNetworkID string
 }
@@ -150,6 +151,7 @@ func newBiome(ctx context.Context, target *yb.Target, opts newBiomeOptions) (bio
 		return nil, fmt.Errorf("set up environment for target %s: %w", target.Name, err)
 	}
 	defer tiniFile.Close()
+
 	c, err := biome.CreateContainer(ctx, opts.dockerClient, &biome.ContainerOptions{
 		PackageDir: opts.packageDir,
 		HomeDir:    home,

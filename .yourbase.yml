@@ -7,6 +7,13 @@ build_targets:
     commands:
       - release/build.sh yb
 
+  - name: macos_aarch64
+    environment: 
+      - GOARCH=arm64
+      - GOOS=darwin
+    commands:
+      - release/build.sh yb 
+
   - name: test
     commands:
       - go test -mod=readonly -race -short ./...

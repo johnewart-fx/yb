@@ -74,7 +74,9 @@ func (b *execCmd) run(ctx context.Context) error {
 	if err != nil {
 		return err
 	}
-	defer removeNetwork()
+	if false {
+		defer removeNetwork()
+	}
 	bio, err := newBiome(ctx, execTarget, newBiomeOptions{
 		packageDir:      pkg.Path,
 		dataDirs:        dataDirs,
@@ -88,11 +90,12 @@ func (b *execCmd) run(ctx context.Context) error {
 	if err != nil {
 		return err
 	}
-	defer func() {
+	/*defer func() {
 		if err := bio.Close(); err != nil {
 			log.Warnf(ctx, "Clean up environment: %v", err)
 		}
-	}()
+	}()*/
+	log.Infof(ctx, "Executing ... ")
 	sys := build.Sys{
 		Biome:           bio,
 		Downloader:      downloader,
@@ -106,10 +109,10 @@ func (b *execCmd) run(ctx context.Context) error {
 		return err
 	}
 	sys.Biome = execBiome
-	defer func() {
-		if err := execBiome.Close(); err != nil {
+	/*defer func() {
+		if err := execBiome.Close(); err != nil {p.unwrap()
 			log.Errorf(ctx, "Clean up environment %s: %v", b.execEnvName, err)
 		}
-	}()
+	}()*/
 	return build.Execute(ctx, sys, announceCommand(os.Stdout), execTarget)
 }

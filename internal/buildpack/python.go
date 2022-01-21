@@ -10,7 +10,7 @@ import (
 
 func installPython(ctx context.Context, sys Sys, spec yb.BuildpackSpec) (biome.Environment, error) {
 	envDir := sys.Biome.JoinPath(sys.Biome.Dirs().Tools, "conda-python", spec.Version())
-	env, err := installAnaconda(ctx, sys, 3, "4.8.3")
+	env, err := installAnaconda(ctx, sys, 3, "4.10.1")
 	if err != nil {
 		return biome.Environment{}, err
 	}

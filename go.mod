@@ -18,7 +18,7 @@ require (
 	github.com/gobwas/pool v0.2.1 // indirect
 	github.com/gobwas/ws v1.0.3
 	github.com/golang/snappy v0.0.1 // indirect
-	github.com/google/go-cmp v0.5.1
+	github.com/google/go-cmp v0.5.6
 	github.com/google/shlex v0.0.0-20191202100458-e7afc7fbc510
 	github.com/johnewart/archiver v3.1.4+incompatible
 	github.com/matishsiao/goInfo v0.0.0-20200404012835-b5f882ee2288
@@ -38,9 +38,9 @@ require (
 	go.opentelemetry.io/otel/sdk v0.11.0
 	go4.org v0.0.0-20200411211856-f5505b9728dd
 	golang.org/x/crypto v0.0.0-20200820211705-5c72a883971a // indirect
-	golang.org/x/mod v0.3.0
-	golang.org/x/net v0.0.0-20200822124328-c89045814202 // indirect
-	golang.org/x/sys v0.0.0-20200831180312-196b9ba8737a
+	golang.org/x/mod v0.5.1
+	golang.org/x/sys v0.0.0-20211019181941-9d821ace8654
+	golang.org/x/tools/gopls v0.7.4 // indirect
 	google.golang.org/genproto v0.0.0-20200831141814-d751682dd103 // indirect
 	google.golang.org/grpc v1.31.1 // indirect
 	google.golang.org/protobuf v1.25.0 // indirect
